@@ -1,0 +1,22 @@
+Feature,Importance
+numeric__Estimated PV System Size (kWdc),0.492038369822129
+numeric__PV System Size (kWac),0.47595416357122955
+numeric__Project Age,0.01453618823625557
+numeric__Interconnection Year,0.013598467658485644
+numeric__System Efficiency,0.003460557102080565
+numeric__Zip,0.00020720453378396102
+numeric__Interconnection Month_cos,0.00018125832967793638
+numeric__Interconnection Day_sin,3.21293272818643e-06
+categorical__Developer,2.764328761618657e-06
+numeric__Interconnection Day_cos,2.5438587029218368e-06
+categorical__City/Town,2.4742964555321676e-06
+categorical__Substation,2.3744047815578576e-06
+categorical__Utility_County,2.363279153074842e-06
+categorical__County,2.27162955604014e-06
+categorical__Circuit ID,2.2442708669734194e-06
+categorical__Division,1.1288704003858037e-06
+categorical__Utility,1.0840656270127403e-06
+numeric__Interconnection Month_sin,1.0684044273784072e-06
+categorical__Metering Method,2.54726352528016e-07
+numeric__Energy Storage System Size (kWac),3.8900436535341336e-09
+numeric__Storage Capacity Ratio,1.7885009653206824e-09

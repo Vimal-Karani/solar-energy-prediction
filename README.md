@@ -1,45 +1,64 @@
 # Solar Energy Production Prediction
 
-Machine learning internship project that predicts estimated annual PV energy production (kWh).
+A machine learning regression project that estimates **annual photovoltaic (PV) energy production in kWh** for solar projects.
+
+## Project Overview
+
+The model uses project-level information such as location, utility, developer, PV system size, storage, metering information, and dates.
+
+The workflow includes:
+
+- Data inspection and exploratory analysis
+- Data cleaning
+- Duplicate removal
+- Date processing
+- Feature engineering
+- Numerical and categorical preprocessing
+- Random Forest regression
+- Model evaluation using MAE, RMSE, and R²
+- Feature importance analysis
+- Comparison of models with and without PV system-size variables
+
+## Model
+
+**Random Forest Regressor**
+
+The final model includes PV system size because system capacity is a meaningful input when estimating the expected production of a known or proposed solar installation.
+
+A second experiment removes the direct system-size variables to understand how much predictive information comes from the remaining project and location features.
 
 ## Files
 
-- `Solar_Energy_Production_Prediction_Polished.ipynb` — Google Colab notebook
-- `app.py` — Streamlit application
-- `solar_energy_model.pkl` — trained Random Forest pipeline
-- `model_metadata.json` — model metrics and settings
-- `feature_importance.csv` — feature importance results
-- `model_comparison.csv` — comparison with and without PV system size
-- `requirements.txt` — Streamlit dependencies
+- `Solar_Energy_Production_Prediction_Polished.ipynb` — polished Google Colab notebook
+- `README.md` — project documentation
+- `requirements.txt` — Python dependencies
 
-## Run locally
+## Running the Notebook
 
-1. Put all files in the same folder.
-2. Open a terminal in that folder.
-3. Install dependencies:
+The notebook was designed for **Google Colab**.
 
-```bash
-pip install -r requirements.txt
-```
+1. Open the notebook in Google Colab.
+2. Mount Google Drive.
+3. Update `DATA_PATH` if your dataset is stored elsewhere.
+4. Run the notebook from top to bottom.
+5. Review the model evaluation, feature importance, and comparison results.
 
-4. Start Streamlit:
+## Key Learning Outcomes
 
-```bash
-streamlit run app.py
-```
+This project demonstrates:
 
-5. Open the local URL shown by Streamlit, normally `http://localhost:8501`.
+- Regression modelling
+- Data cleaning
+- Feature engineering
+- Date-based feature creation
+- Categorical preprocessing
+- Random Forest regression
+- Model evaluation
+- Feature importance analysis
+- Comparing alternative feature sets
 
-## Google Colab
+## Important Limitation
 
-The notebook keeps the original Google Drive workflow. Upload the CSV to the Drive folder specified by `DATA_PATH`, then run the notebook from top to bottom.
+The dataset does not directly contain detailed irradiance, weather, panel orientation, tilt, or other physical variables required for a complete solar-production simulation.
 
-The final cells save the trained model and metadata to Google Drive.
-
-## Important project note
-
-The final model includes PV system size because system capacity is a valid input when estimating expected annual production for a known installation.
-
-A second Random Forest experiment removes both PV system-size variables. This produces a much lower R² and demonstrates that the remaining project/location information is less predictive.
-
-The dataset does not directly include detailed irradiance, weather, panel orientation or tilt variables, so this should be presented as a machine-learning estimate based on the available project data rather than a full physical solar simulation.
+Therefore, the model should be described as a **machine learning estimate based on available project information**, rather than a full physical solar-energy simulation.
